@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2 Bed / 2 Bath House for Rent - Orlando</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #0059b3;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .header-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .client-info,
+    .price-location {
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .client-info strong {
+      display: inline-block;
+      width: 120px;
+    }
+
+    .house-intro p {
+      line-height: 1.6;
+    }
+
+    .price-location p {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    .features ul {
+      padding-left: 20px;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card .label {
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+      background: #f0f0f0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .contact-form,
+    .tour-btn {
+      margin-top: 30px;
+    }
+
+    form input,
+    form textarea,
+    form button,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button,
+    .tour-btn button {
+      background: #0059b3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0059b3;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .header-title {
+        font-size: 1.2rem;
+      }
+
+      .logo {
+        height: 30px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+.testimonials {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-top: 40px;
+}
+
+.testimonials h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0059b3;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  font-style: italic;
+  border-left: 4px solid #0059b3;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.testimonial-card strong {
+  display: block;
+  margin-top: 15px;
+  color: #333;
+  font-style: normal;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="header-title">2 Bed / 2 Bath House for Rent – Orlando, FL</h1>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4htX9xLrND1ePtsXBVGSbMwkuzr_p4dQEKA&s" alt="Zillow Logo" class="logo">
+</header>
+
+<div class="main">
+
+  <div class="success-message">
+    🎉 Congratulations! Your preferred house has been reserved for your consideration.
+  </div>
+
+  <div class="section client-info">
+    <h2>Client Information</h2>
+    <p><strong>Name:</strong> Chanda Campbell</p>
+    <p><strong>Email:</strong> campbell.chanda1@gmail.com</p>
+    <p><strong>Phone:</strong> +1 954-982-5084</p>
+  </div>
+
+  <div class="section house-intro">
+    <h2>About the House</h2>
+    <p>This beautiful 2-bedroom, 2-bathroom home is located at <strong>4697 Rose Coral Dr, Orlando, FL 32808</strong>. It's perfect for individuals or families seeking a serene and stylish living environment in the heart of Orlando. The house features modern finishes, spacious rooms, and proximity to parks, schools, and public transport.</p>
+  </div>
+
+  <div class="section price-location">
+    <p><strong>Rent:</strong> $1,408</p>
+    <p><strong>Address:</strong> 4697 Rose Coral Dr, Orlando, FL 32808</p>
+  </div>
+
+  <div class="section features">
+    <h3>House Features</h3>
+    <ul>
+      <li>2 Bedrooms, 2 Bathrooms</li>
+      <li>Fully Furnished with Modern Design</li>
+      <li>Central Air Conditioning</li>
+      <li>Private Balcony and Backyard</li>
+      <li>24/7 Security and Maintenance</li>
+      <li>Washer & Dryer Included</li>
+      <li>Pet Friendly</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Gallery</h3>
+    <div class="gallery">
+      <div class="card">
+        <img src="Screenshot_1.png" alt="Interior View 1">
+        <div class="label">Interior View</div>
+      </div>
+      <div class="card">
+        <img src="Screenshot_2.png" alt="Living Area">
+        <div class="label">Interior View</div>
+      </div>
+      <div class="card">
+        <img src="Screenshot_3.png" alt="Bedroom">
+        <div class="label">Interior View</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section tour-btn">
+    <button onclick="openModal()">📅 Schedule Virtual Tour</button>
+  </div>
+
+  <div class="section contact-form">
+    <h3>Send Us a Message</h3>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Message or questions..."></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="tourModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h3>Select Virtual Tour Date</h3>
+    <select id="tourDate">
+      <option value="">-- Select a date --</option>
+      <option>July 20, 2025</option>
+      <option>July 22, 2025</option>
+      <option>July 25, 2025</option>
+    </select>
+    <button onclick="saveTour()">Confirm Tour</button>
+  </div>
+</div>
+<div class="section testimonials">
+  <h3>What Our Tenants Say</h3>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p>"Living here has been such a joy! The neighborhood is peaceful, and the house is just as beautiful as advertised."</p>
+      <strong>- Maria G.</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>"Clean, secure, and comfortable. The management is super responsive. I highly recommend it!"</p>
+      <strong>- Kevin J.</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>"Perfect location. Everything from schools to groceries is within minutes. I love my new home!"</p>
+      <strong>- Aisha T.</strong>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Orlando Rentals | All rights reserved
+</footer>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBCjVwHfCK0kiXwes1fbKok-EU-aTnuJ2s",
+    authDomain: "words-a53db.firebaseapp.com",
+    databaseURL: "https://words-a53db-default-rtdb.firebaseio.com",
+    projectId: "words-a53db",
+    storageBucket: "words-a53db.appspot.com",
+    messagingSenderId: "432659334745",
+    appId: "1:432659334745:web:504e12c193a04b0a6c9348"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!name || !email || !message) return alert('Please fill out all fields.');
+
+    db.ref("contactMessages").push({ name, email, message, timestamp: new Date().toISOString() })
+    .then(() => {
+      alert("Message sent!");
+      document.getElementById('contactForm').reset();
+    }).catch(err => alert("Failed to send: " + err.message));
+  });
+
+  function openModal() {
+    document.getElementById('tourModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('tourModal').style.display = 'none';
+  }
+
+  function saveTour() {
+    const tourDate = document.getElementById('tourDate').value;
+    if (!tourDate) return alert("Please select a date.");
+    db.ref("virtualTours").push({ tourDate, timestamp: new Date().toISOString() })
+    .then(() => {
+      alert("Virtual tour booked!");
+      closeModal();
+    }).catch(err => alert("Failed to book: " + err.message));
+  }
+
+  window.onclick = function(e) {
+    if (e.target === document.getElementById("tourModal")) closeModal();
+  }
+</script>
+
+</body>
+</html>
