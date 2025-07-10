@@ -236,6 +236,26 @@
       color: #004085;
       border-radius: 6px;
     }
+.alt-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: linear-gradient(145deg, #ffffff, #e0e0e0);
+  color: #0059b3;
+  border: 2px solid #0059b3;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.alt-button:hover {
+  background: #0059b3;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.15);
+}
+
 
   </style>
 </head>
@@ -320,6 +340,11 @@
     </form>
   </div>
 </div>
+<div style="text-align:center; margin-top: 20px;">
+  <p>If this house doesn’t meet your needs, feel free to explore another available option below.</p>
+  <a href="house2.html" class="alt-button">🏠 Explore Another House</a>
+</div>
+
 
 <!-- Modal -->
 <div class="modal" id="tourModal">
