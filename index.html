@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zillow - Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f6f7f8;
+    }
+
+    header {
+      background-color: #006aff;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .apartment-img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      max-height: 350px;
+      margin-top: 10px;
+    }
+
+    ul.features {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    ul.features li {
+      margin-bottom: 5px;
+    }
+
+    .cost {
+      color: #007A1F;
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .approval-status {
+      background: #e6f3ff;
+      border: 1px solid #b3daff;
+      padding: 15px;
+      color: #004085;
+      border-radius: 6px;
+    }
+
+    .schedule-btn {
+      background: #006aff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .feedback-form {
+      margin-top: 30px;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .feedback-form button {
+      background: #006aff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 25px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.4em;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    .modal img {
+      width: 100%;
+      max-height: 200px;
+      border-radius: 6px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #006aff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Zillow Housing Agent</h1>
+  <p>Welcome, Chanda Campbell</p>
+</header>
+
+<div class="container">
+  <section>
+    <h2>Your Application</h2>
+    <table>
+      <tr><td><strong>Email:</strong></td><td>campbell.chanda1@gmail.com</td></tr>
+      <tr><td><strong>Phone:</strong></td><td>+1 954-982-5084</td></tr>
+      <tr><td><strong>Address:</strong></td><td>1447 Welson Rd Orlando, FL 32837</td></tr>
+      <tr><td><strong>Proposed Move-in Date:</strong></td><td>August 1, 2025</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Apartment Information</h2>
+    <img class="apartment-img" src="https://ttimages.blob.core.windows.net/property/dcb7e89e-0fb1-4899-974d-f0d865b6b8e1.jpg" alt="Apartment Image">
+    <p><strong>Location:</strong> 225 Orange Blossom Ave, Orlando, FL 32801</p>
+    <p class="cost">Monthly Rent: $1,950</p>
+    <ul class="features">
+      <li>2 Bedrooms, 2 Bathrooms</li>
+      <li>Fully Furnished</li>
+      <li>Central Air Conditioning</li>
+      <li>Washer & Dryer Included</li>
+      <li>Pet Friendly</li>
+      <li>Private Balcony</li>
+      <li>Modern Kitchen with Island</li>
+      <li>Walk-in Closets</li>
+      <li>Hardwood Flooring</li>
+      <li>24/7 Maintenance Service</li>
+    </ul>
+    <button class="schedule-btn" onclick="showModal()">Schedule Virtual Tour</button>
+  </section>
+
+  <section>
+    <h2>Approval Status</h2>
+    <div class="approval-status">
+      ✅ Application Approved - Awaiting Security Deposit Payment.
+    </div>
+  </section>
+
+  <section class="feedback-form">
+    <h2>Not Satisfied With the Approved Apartment?</h2>
+    <p>If you're not satisfied with the approved apartment, let us know your preferences below:</p>
+    <label>Name</label>
+    <input type="text" value="Amanda Green" readonly>
+    <label>Current Location</label>
+    <input type="text" value="225 Orange Blossom Ave, Orlando, FL" readonly>
+    <label>Message</label>
+    <textarea rows="4" placeholder="Tell us what kind of apartment you prefer..."></textarea>
+    <button>Submit Preferences</button>
+  </section>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="tourModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img src="https://ttimages.blob.core.windows.net/property/dcb7e89e-0fb1-4899-974d-f0d865b6b8e1.jpg">
+    <h3>Select a Virtual Tour Date</h3>
+    <select id="tourDateSelect">
+      <option>-- Choose a Date --</option>
+      <option>July 22, 2025</option>
+      <option>July 24, 2025</option>
+      <option>July 25, 2025</option>
+    </select>
+    <br><br>
+    <button class="schedule-btn" onclick="saveTourDate()">Save Date</button>
+    <p style="margin-top:10px;font-size:0.9em;color:#555;">ℹ️ Virtual tour is only available after payment confirmation.</p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Zillow. All rights reserved.
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBCjVwHfCK0kiXwes1fbKok-EU-aTnuJ2s",
+    authDomain: "words-a53db.firebaseapp.com",
+    databaseURL: "https://words-a53db-default-rtdb.firebaseio.com",
+    projectId: "words-a53db",
+    storageBucket: "words-a53db.firebasestorage.app",
+    messagingSenderId: "432659334745",
+    appId: "1:432659334745:web:504e12c193a04b0a6c9348"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  document.querySelector(".feedback-form button").addEventListener("click", () => {
+    const name = document.querySelectorAll('.feedback-form input')[0].value;
+    const location = document.querySelectorAll('.feedback-form input')[1].value;
+    const message = document.querySelector('.feedback-form textarea').value;
+
+    if (message.trim() === "") {
+      alert("Please enter your preference message.");
+      return;
+    }
+
+    db.ref("preferences").push({
+      name,
+      location,
+      message,
+      timestamp: new Date().toISOString()
+    }).then(() => {
+      alert("Your preference has been submitted!");
+      document.querySelector('.feedback-form textarea').value = "";
+    }).catch(err => {
+      alert("Submission failed: " + err.message);
+    });
+  });
+
+  function showModal() {
+    document.getElementById("tourModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("tourModal").style.display = "none";
+  }
+
+  window.onclick = function (e) {
+    if (e.target === document.getElementById("tourModal")) {
+      closeModal();
+    }
+  };
+
+  function saveTourDate() {
+    const tourDate = document.getElementById("tourDateSelect").value;
+    const name = "Chanda Campbell";
+    const email = "campbell.chanda1@gmail.com";
+
+    if (tourDate === "-- Choose a Date --") {
+      alert("Please select a valid tour date.");
+      return;
+    }
+
+    db.ref("tourDates").push({
+      name,
+      email,
+      tourDate,
+      timestamp: new Date().toISOString()
+    }).then(() => {
+      alert("Tour date saved successfully!");
+      closeModal();
+    }).catch(err => {
+      alert("Failed to save tour date: " + err.message);
+    });
+  }
+</script>
+</body>
+</html>
