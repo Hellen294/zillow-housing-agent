@@ -128,10 +128,10 @@
     }
 
     .approval-status {
-      background: #e0ffe0;
-      color: #228B22;
+      background: #d4f4ff;
+      color: #006699;
       padding: 10px;
-      border-left: 4px solid #228B22;
+      border-left: 4px solid #006699;
       font-weight: bold;
     }
 
@@ -159,87 +159,6 @@
       width: 200px;
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      left: 0; top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-      width: 90%;
-      max-width: 500px;
-      position: relative;
-    }
-
-    .modal-content img {
-      width: 100%;
-      border-radius: 4px;
-      margin-bottom: 15px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .schedule-btn {
-      background-color: #228B22;
-      color: white;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    .schedule-btn-section {
-      text-align: center;
-      padding: 30px 20px;
-      background: #f8f8f8;
-    }
-
-    .schedule-btn-section button {
-      padding: 10px 20px;
-      background: #4B7B8F;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-
-    .info, .features {
-      background: #fff;
-      color: #333;
-      padding: 30px 20px;
-      margin: 0;
-    }
-
-    .info h2, .features h2 {
-      color: #228B22;
-      margin-bottom: 15px;
-    }
-
-    .features ul {
-      padding-left: 20px;
-    }
-
-    .features li {
-      margin-bottom: 8px;
-    }
-
     footer {
       text-align: center;
       padding: 15px;
@@ -253,6 +172,13 @@
         flex-direction: column;
         align-items: center;
       }
+    }
+    .status {
+      margin-top: 20px;
+      background-color: #4f809a;
+      padding: 15px;
+      border-left: 5px solid #4CAF50;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -278,13 +204,13 @@
   </div>
   <div class="image-block">
     <div class="image-overlay">
-      <p>● FOR RENT</p>
+      <p>● RENTED OUT</p>
       <p>$1,610/mo</p>
       <p>2 bd. 1.5 baths. 988 sqft</p>
       <button class="zillow-button">ZILLOW</button>
     </div>
     <img src="Screenshot_65.png" alt="Apartment Interior">
-<p>Location: South Eversham CT Henrico Va 23294</p>
+    <p>Location: South Eversham CT Henrico Va 23294</p>
   </div>
 </div>
 
@@ -306,25 +232,27 @@
   </p>
 </section>
 
-
 <section>
-  <h2>Approval Status</h2>
+  <h2>Current Status</h2>
   <div class="approval-status">
-    ✅ Application Approved - Awaiting Rent Payment.
+    ✅ Apartment Rented - Payment Complete.
   </div>
 </section>
 
-<section class="feedback-form">
-  <h2>Not Satisfied With the Approved Apartment?</h2>
-  <p>If you're not satisfied with the approved apartment, let us know your preferences below:</p>
-  <label>Name</label>
-  <input type="text" value="Deedrea Lewis" readonly>
-  <label>Current Location</label>
-  <input type="text" value="8537 South Eversham CT, Henrico VA 23294" readonly>
-  <label>Message</label>
-  <textarea rows="4" placeholder="Tell us what kind of apartment you prefer..."></textarea>
-  <button>Submit Preferences</button>
+<section class="info">
+  <h2>Next Step: Cash for Keys</h2>
+  <p><strong>Amount:</strong> <span style="color: green; font-weight: bold;">$520</span></p>
+  <p>Please proceed with the Cash for Keys payment of $520 to receive access and final move-in instructions.</p>
+  <p>Contact your leasing officer for payment instructions if you haven’t received them already.</p>
 </section>
+
+    <div class="status">
+      ✅ Your application has been approved and your rent payment secured. A leasing agent will contact you shortly for final arrangements including move-in date and handover of keys.
+    </div>
+
+    <p>If you have any questions or need further assistance, feel free to reach out to me directly.</p>
+
+    <p>Best regards,<br><strong>Agent Scott W. Zillow Housing</strong><br>Leasing Coordinator</p>
 
 
 <footer>
@@ -368,43 +296,6 @@
       alert("Submission failed: " + err.message);
     });
   });
-
-  function showModal() {
-    document.getElementById("tourModal").style.display = "flex";
-  }
-
-  function closeModal() {
-    document.getElementById("tourModal").style.display = "none";
-  }
-
-  window.onclick = function (e) {
-    if (e.target === document.getElementById("tourModal")) {
-      closeModal();
-    }
-  };
-
-  function saveTourDate() {
-    const tourDate = document.getElementById("tourDateSelect").value;
-    const name = "Deedrea Lewis";
-    const email = "deedrealewis@gmail.com";
-
-    if (tourDate === "-- Choose a Date --") {
-      alert("Please select a valid tour date.");
-      return;
-    }
-
-    db.ref("tourDates").push({
-      name,
-      email,
-      tourDate,
-      timestamp: new Date().toISOString()
-    }).then(() => {
-      alert("Tour date saved successfully!");
-      closeModal();
-    }).catch(err => {
-      alert("Failed to save tour date: " + err.message);
-    });
-  }
 </script>
 
 </body>
